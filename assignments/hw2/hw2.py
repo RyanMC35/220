@@ -2,9 +2,8 @@
 Name: Ryan Campbell
 <hw2>.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your
-own words.>
-
+Problem: The purpose of this assignment is to set up program that will
+accumulate and compute a user's input
 Certification of Authenticity: I certify that this assignment is entirely my own work.
 <include one of the following>
 I certify that this assignment is entirely my own work.
