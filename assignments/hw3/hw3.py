@@ -1,11 +1,12 @@
 """
 Name: Ryan Campbell
-<ProgramName>.py
+<hw3>.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves,
-in your own words.>
+Problem: Purpose of this assignment is to create for loops that also
+accumulate and compute data to create a wanted output.
 
-Certification of Authenticity:
+Certification of Authenticity:I, Ryan Campbell, certify that this assignment
+is entirely my own work.
 <include one of the following>
 I certify that this assignment is entirely my own work.
 I certify that this assignment is my own work, but I discussed it with: <Name(s)>
