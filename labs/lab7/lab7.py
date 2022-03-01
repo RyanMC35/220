@@ -1,7 +1,7 @@
 """
 Ryan Campbell
 lab7.py
-Problem Description -
+Problem Description - to use multiple functions to create a desired graphical output
 
 
 """
