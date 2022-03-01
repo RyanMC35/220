@@ -35,7 +35,7 @@ def hit_vertical(ball, win):
     height_ = win.getHeight()
     y_ = center_.getY()
     radius_ = ball.getRadius()
-    return y_ + radius_ >= height_ or y_ - radius_ <= 0
+    return y_ + radius_ > height_ or y_ - radius_ < 0
 
 
 def hit_horizontal(ball, win):
@@ -43,7 +43,7 @@ def hit_horizontal(ball, win):
     width_ = win.getWidth()
     x_ = center_.getX()
     radius_ = ball.getRadius()
-    return 0 >= (x_ - radius_) or width_ <= (x_ + radius_)
+    return 0 > (x_ - radius_) or width_ < (x_ + radius_)
 
 
 def get_random_color():
