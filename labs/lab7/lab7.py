@@ -2,7 +2,7 @@
 Ryan Campbell
 lab7.py
 Problem Description - to use multiple functions to create a desired graphical output
-
+I Ryan Campbell certify this assignment is entirely my own work.
 
 """
 import graphics
