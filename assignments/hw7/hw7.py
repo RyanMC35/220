@@ -4,42 +4,39 @@ hw7.py
 
 Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
 
-Certification of Authenticity:
+Certification of Authenticity: I, Ryan Campbell, certify that this assignment is entirely my own work.
 <include one of the following>
 I certify that this assignment is entirely my own work.
 I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 import string
+import encryption
 
 
 def number_words(in_file_name, out_file_name):
     in_file_name.read()
-    split_ = in_file_name.split(" ")
+    split_ = in_file_name.split("/n")
+    second_split_ = [split_.split(" ")]
     length_ = len(split_)
     for i in range(length_):
         number = i + 1
-        word_ = split_[i]
-        out_file_name = str(number) + " " + word_
-    return out_file_name
-
-
-def hourly_wages(in_file_name, out_file_name):
-    in_file_name.readlines()
-    split_ = str(in_file_name).split("/n")
-    length_ = len(split_)
-    for i in range(length_):
-        employee_wage = split_[i]
-        secondsplit_ = employee_wage.split(" ")
-        employee = str(secondsplit_[0]) + str(secondsplit_[1])
-        wage = float(secondsplit_[2]) * float(secondsplit_[3])
-        wage_bonus = 1.65 * float(secondsplit_[3])
-        total_wage = wage + wage_bonus
-        combination_ = employee + str(total_wage)
+        word_ = second_split_[i]
+        combination_ = str(number) + " " + word_
         print(combination_, file=out_file_name)
 
 
-# in_file_name = ('hourly_wages.txt', "r")
-# out_file_name = ('hourly_wages.txt', "w")
+def hourly_wages(in_file_name, out_file_name):
+    file_ = open(in_file_name, 'w')
+    for line in file_.readlines():
+        split_ = line.split(" ")
+        employee_ = split_[0] + split_[1]
+        pay_ = split_[2]
+        hours_ = split_[3]
+        pay_week = float(pay_) * float(hours_)
+        bonus_ = 1.65 * float(hours_)
+        total_pay = bonus_ + pay_week
+        out_line = employee_ + " " + str(total_pay)
+        print(out_line, file=out_file_name)
 
 
 def calc_check_sum(isbn):
@@ -72,27 +69,19 @@ def encode(message_, key_):
 
 
 def send_safe_message(file_name, friend_name, key):
-    pass
+    file_ = file_name.read()
+    length_ = len(file_)
+    encoded_message = ""
+    for i in range(length_):
+        letter = file_[i]
+        encode_ = ord(letter) + key
+        decode_ = chr(encode_)
+        encoded_message = encoded_message + decode_
+    print(encoded_message, file=friend_name.txt)
 
 
 def send_uncrackable_message(file_name, friend_name, pad_file_name):
-    file_info = file_name
-    message_ = input("enter a message:")
-    key_ = input("enter a key:")
-    length_key = len(key_)
-    length_message = len(message_)
-    encoded_message = ""
-    for i in range(length_message):
-        letter_message = message_[i]
-        key_number = i % length_key
-        letter_key = key_[key_number]
-        encoded_letter_message = ord(letter_message) - 65
-        encoded_letter_key = ord(letter_key) - 65
-        combined_encoding = encoded_letter_key + encoded_letter_message
-        encode_moved = (combined_encoding % 58) + 65
-        decoded_ = chr(encode_moved)
-        encoded_message = encoded_message + decoded_
-    print(encoded_message)
+    print(encode(file_name.read(), pad_file_name.read()), file=friend_name.txt)
 
 
 if __name__ == '__main__':
