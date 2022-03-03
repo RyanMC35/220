@@ -2,9 +2,10 @@
 Name: Ryan Campbell
 hw7.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem:
 
-Certification of Authenticity: I, Ryan Campbell, certify that this assignment is entirely my own work.
+Certification of Authenticity: I, Ryan Campbell, certify that this assignment is
+entirely my own work.
 <include one of the following>
 I certify that this assignment is entirely my own work.
 I certify that this assignment is my own work, but I discussed it with: <Name(s)>
@@ -14,8 +15,8 @@ import encryption
 
 
 def number_words(in_file_name, out_file_name):
-    in_file_name.read()
-    split_ = in_file_name.split("/n")
+    file_ = in_file_name.read()
+    split_ = file_.split("/n")
     second_split_ = [split_.split(" ")]
     length_ = len(split_)
     for i in range(length_):
@@ -26,8 +27,8 @@ def number_words(in_file_name, out_file_name):
 
 
 def hourly_wages(in_file_name, out_file_name):
-    file_ = open(in_file_name, 'w')
-    for line in file_.readlines():
+    infile = open(in_file_name, 'r')
+    for line in infile.readlines():
         split_ = line.split(" ")
         employee_ = split_[0] + split_[1]
         pay_ = split_[2]
