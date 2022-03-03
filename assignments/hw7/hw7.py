@@ -28,6 +28,7 @@ def number_words(in_file_name, out_file_name):
 
 def hourly_wages(in_file_name, out_file_name):
     infile = open(in_file_name, 'r')
+    outfile = open(out_file_name, 'w')
     for line in infile.readlines():
         split_ = line.split(" ")
         employee_ = split_[0] + split_[1]
@@ -37,7 +38,7 @@ def hourly_wages(in_file_name, out_file_name):
         bonus_ = 1.65 * float(hours_)
         total_pay = bonus_ + pay_week
         out_line = employee_ + " " + str(total_pay)
-        print(out_line, file=out_file_name)
+        print(out_line, file=outfile)
 
 
 def calc_check_sum(isbn):
