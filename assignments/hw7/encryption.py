@@ -12,4 +12,15 @@ def encode_better(message, key):
         encode_moved = (combined_encoding % 58) + 65
         decoded_ = chr(encode_moved)
         encoded_message = encoded_message + decoded_
-    print(encoded_message)
+    return encoded_message
+
+
+def encode(message_, key_):
+    length_ = len(message_)
+    encoded_message = ""
+    for i in range(length_):
+        letter = message_[i]
+        encode_ = ord(letter) + key_
+        decode_ = chr(encode_)
+        encoded_message = encoded_message + decode_
+    return encoded_message

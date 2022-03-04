@@ -2,7 +2,8 @@
 Name: Ryan Campbell
 hw7.py
 
-Problem:
+Problem: To use files in order to obtain information that can be edited and returned to that file
+or sent to another file.
 
 Certification of Authenticity: I, Ryan Campbell, certify that this assignment is
 entirely my own work.
@@ -10,20 +11,18 @@ entirely my own work.
 I certify that this assignment is entirely my own work.
 I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
-import string
 import encryption
 
 
 def number_words(in_file_name, out_file_name):
-    file_ = in_file_name.read()
-    split_ = file_.split("/n")
-    second_split_ = [split_.split(" ")]
-    length_ = len(split_)
-    for i in range(length_):
-        number = i + 1
-        word_ = second_split_[i]
-        combination_ = str(number) + " " + word_
-        print(combination_, file=out_file_name)
+    infile_ = open(in_file_name, 'r')
+    outfile = open(out_file_name, 'w')
+    file_ = infile_.read()
+    nolines = (file_.replace("\n", " ")).rstrip()
+    seperateword = nolines.split(" ")
+    for i in range(len(seperateword)):
+        combo = str(i + 1) + " " + seperateword[i]
+        print(combo, file=outfile)
 
 
 def hourly_wages(in_file_name, out_file_name):
@@ -31,13 +30,19 @@ def hourly_wages(in_file_name, out_file_name):
     outfile = open(out_file_name, 'w')
     for line in infile.readlines():
         split_ = line.split(" ")
-        employee_ = split_[0] + split_[1]
+        employee_ = split_[0] + " " + split_[1]
         pay_ = split_[2]
         hours_ = split_[3]
         pay_week = float(pay_) * float(hours_)
         bonus_ = 1.65 * float(hours_)
         total_pay = bonus_ + pay_week
-        out_line = employee_ + " " + str(total_pay)
+        decimal_dollar = str(total_pay).split(".")
+        dollar = decimal_dollar[0]
+        change_ = decimal_dollar[1]
+        decimal_change = "{0:0<2}".format(int(change_))
+        total = "{}.{:0<2}".format(dollar, decimal_change)
+        two_decimals = "{0:.2f}".format(float(total))
+        out_line = employee_ + " " + two_decimals
         print(out_line, file=outfile)
 
 
@@ -50,40 +55,34 @@ def calc_check_sum(isbn):
         multiplier = (length_ - i)
         final_isbn_number = isbn_number * multiplier
         product_isbn = product_isbn + final_isbn_number
-    print(product_isbn)
+    return product_isbn
 
 
 def send_message(file_name, friend_name):
     file_ = open(file_name, "r")
-    new_file = friend_name.txt
-    print(file_, file=new_file)
-
-
-def encode(message_, key_):
-    length_ = len(message_)
-    encoded_message = ""
-    for i in range(length_):
-        letter = message_[i]
-        encode_ = ord(letter) + key_
-        decode_ = chr(encode_)
-        encoded_message = encoded_message + decode_
-    return encoded_message
+    friend_txt = friend_name + ".txt"
+    friendfile = open(friend_txt, 'w')
+    infor = file_.read()
+    print(infor.rstrip(), file=friendfile)
 
 
 def send_safe_message(file_name, friend_name, key):
-    file_ = file_name.read()
-    length_ = len(file_)
-    encoded_message = ""
-    for i in range(length_):
-        letter = file_[i]
-        encode_ = ord(letter) + key
-        decode_ = chr(encode_)
-        encoded_message = encoded_message + decode_
-    print(encoded_message, file=friend_name.txt)
+    infile = open(file_name, 'r')
+    friend_txt = friend_name + ".txt"
+    friendfile = open(friend_txt, 'w')
+    total_encrypted = ""
+    for line in infile.readlines():
+        encrypted_line = encryption.encode(line.rstrip(), key)
+        total_encrypted = total_encrypted + encrypted_line + "\n"
+    print(total_encrypted.rstrip(), file=friendfile)
 
 
 def send_uncrackable_message(file_name, friend_name, pad_file_name):
-    print(encode(file_name.read(), pad_file_name.read()), file=friend_name.txt)
+    infile = open(file_name, 'r')
+    padfile = open(pad_file_name, 'r')
+    friend_txt = friend_name + ".txt"
+    friendname = open(friend_txt, 'w')
+    print(encryption.encode_better(infile.read(), padfile.read()), file=friendname)
 
 
 if __name__ == '__main__':
