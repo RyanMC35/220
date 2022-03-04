@@ -31,16 +31,11 @@ def hourly_wages(in_file_name, out_file_name):
     for line in infile.readlines():
         split_ = line.split(" ")
         employee_ = split_[0] + " " + split_[1]
-        pay_ = split_[2]
-        hours_ = split_[3]
-        pay_week = float(pay_) * float(hours_)
-        bonus_ = 1.65 * float(hours_)
-        total_pay = bonus_ + pay_week
-        decimal_dollar = str(total_pay).split(".")
+        pay_week = (float(split_[2]) + 1.65) * float(split_[3])
+        decimal_dollar = str(pay_week).split(".")
         dollar = decimal_dollar[0]
         change_ = decimal_dollar[1]
-        decimal_change = "{0:0<2}".format(int(change_))
-        total = "{}.{:0<2}".format(dollar, decimal_change)
+        total = "{}.{:0<2}".format(dollar, change_)
         two_decimals = "{0:.2f}".format(float(total))
         out_line = employee_ + " " + two_decimals
         print(out_line, file=outfile)
