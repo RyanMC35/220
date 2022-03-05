@@ -2,8 +2,8 @@
 Name: Ryan Campbell
 hw7.py
 
-Problem: To use files in order to obtain information that can be edited and returned to that file
-or sent to another file.
+Problem: To use files in order to obtain information that can be edited and returned to
+that file or sent to another file.
 
 Certification of Authenticity: I, Ryan Campbell, certify that this assignment is
 entirely my own work.
