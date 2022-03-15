@@ -1,7 +1,8 @@
 """
 Ryan Campbell
 lab8.py
-Problem Description -
+Problem Description - Taking data from an input file, doing computation on the data in
+input file, and then putting modified data into output file
 I Ryan Campbell certify this assignment is entirely my own work.
 
 """
