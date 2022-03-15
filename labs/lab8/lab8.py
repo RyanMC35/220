@@ -32,7 +32,7 @@ def weighted_average(in_file_name, out_file_name):
             number_of_students_grades = 1 + number_of_students_grades
             print(name_student + "'s".lstrip(), "average:", round(final_grade, 1), file=opened_output_file)
         elif total_weight > 100:
-            print(name_student + "'s", "average:", "Error: The weights are greater than 100.", file=opened_output_file)
+            print(name_student + "'s", "average:", "Error: The weights are more than 100.", file=opened_output_file)
         elif total_weight < 100:
             print(name_student + "'s", "average:", "Error: The weights are less than 100.", file=opened_output_file)
     print("Class average:", class_average / number_of_students_grades, file=opened_output_file)
