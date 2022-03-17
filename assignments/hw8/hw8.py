@@ -2,10 +2,12 @@
 Name: Ryan Campbell
 hw8.py
 
-Problem: Modify items in a lists, use conditional statements to determine boolean values
-of a set of input data, and modify code in order to test for overlapping of graphics items.
+Problem: Modify items in a lists, use conditional statements to determine
+boolean valuesof a set of input data, and modify code in order to test
+for overlapping of graphics items.
 
-Certification of Authenticity: I, Ryan Campbell, certify this assignment is entirely my own work.
+Certification of Authenticity: I, Ryan Campbell, certify this assignment
+is entirely my own work.
 <include one of the following>
 I certify that this assignment is entirely my own work.
 I certify that this assignment is my own work, but I discussed it with: <Name(s)>
