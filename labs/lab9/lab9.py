@@ -1,7 +1,7 @@
 """
 Name: Ryan Campbell
 lab9.py
-Problem Description- create a tic tak toe game
+Problem Description- create a tic tak toe game.
 I Ryan Campbell certify this assignment is entirely my own work.
 """
 # must display instructions for the game first
