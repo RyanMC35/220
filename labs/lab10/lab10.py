@@ -1,7 +1,7 @@
 """
 Name: Ryan Campbell
 lab10.py
-Problem Description - creating our own classes
+Problem Description - creating our own classes.
 I Ryan Campbell certify this assignment is entirely my own work.
 """
 import graphics
