@@ -36,6 +36,6 @@ class Button:
         else:
             return False
 
-    def color_button(self):
-        self.shape.setFill(color_rgb(0, 0, 0))
+    def color_button(self, color):
+        self.shape.setFill(color)
 

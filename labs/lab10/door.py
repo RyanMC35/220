@@ -34,14 +34,14 @@ class Door:
             return False
 
     def open(self, color, label):
-        self.color_(color)
+        self.color_door(color)
         self.set_label(label)
 
     def close(self, color, label):
-        self.color_(color)
+        self.color_door(color)
         self.set_label(label)
 
-    def color_(self, color):
+    def color_door(self, color):
         self.shape.setFill(color)
 
     def is_secret(self):
