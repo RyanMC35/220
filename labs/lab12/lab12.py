@@ -8,7 +8,7 @@ I Ryan Campbell certify this assignment is entirely my own work.
 from random import randint
 
 
-def find_and_remove(lists, value):
+def find_and_remove_first(lists, value):
     location = lists.index(value)
     lists.remove(value)
     lists.insert(location, "ryan")
